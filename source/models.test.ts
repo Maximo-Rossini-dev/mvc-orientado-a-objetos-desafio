@@ -28,7 +28,9 @@ test("Testeo el save del modelo", (t) => {
   };
   model.addOne(mockContact);
   model.save();
-  const fileContent = jsonfile.readFileSync(__dirname + "/contacts.json");
+  const fileContent = jsonfile.readFileSync("source/contacts.json");
+  console.log("File content ", fileContent);
+
   t.deepEqual(fileContent, model.getAll());
 });
 
