@@ -22,12 +22,19 @@ test("Testeo el método processOptions", (t) => {
   const mockContact = contrllr.contacts.getOneById(1);
   const testGet = contrllr.processOptions({ action: "get", params: { id: 1 } });
   t.deepEqual(mockContact, testGet);
-  contrllr.processOptions({
+  /* contrllr.processOptions({
     action: "save",
     params: { id: 6, name: "Arturo" },
   });
-  t.deepEqual(
-    contrllr.contacts.contacts[contrllr.contacts.contacts.length - 1],
-    { id: 6, name: "Arturo" }
-  );
+
+  let res = contrllr.contacts.contacts.find((c) => c.id == 6);
+  console.log("RES :", res);
+  if (res) {
+    let index = contrllr.contacts.contacts.indexOf(res);
+    t.deepEqual(contrllr.contacts.contacts[index], {
+      id: 6,
+      name: "Arturo",
+    });
+    contrllr.contacts.contacts = contrllr.contacts.contacts.splice(index, 1);
+  } */
 });

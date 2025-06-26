@@ -21,8 +21,6 @@ class ContactsCollection {
     this.contacts = [];
   }
   load() {
-    /*   let currentContacts = readFile("source/contacts.json");
-    this.contacts = currentContacts; */
     let currentContacts = fs.readFileSync("source/contacts.json").toString();
     this.contacts = JSON.parse(currentContacts);
   }

@@ -6,10 +6,7 @@ import * as jsonfile from "jsonfile";
 test("Testeo el load del modelo", (t) => {
   const model = new ContactsCollection();
   model.load();
-  console.log("contactsObject :", contactsObject);
-  console.log("model get all :", model.getAll());
-  const currentContacts = model.getAll();
-
+  let currentContacts = model.getAll();
   t.deepEqual(contactsObject, currentContacts);
 });
 
